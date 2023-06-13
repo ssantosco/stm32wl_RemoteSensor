@@ -1,5 +1,10 @@
-# stm32wl_radioDriver_pingPong
 
-An example of using the low-level Sub-GHz Phy driver in a standalone fashion. This example duplicates the high-level functionality of the SubGHz\_Phy\_PingPong example in the [STM32CubeWL MCU Package](https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32cube-mcu-mpu-packages/stm32cubewl.html). Two [NUCLEO-WL55JC1](https://www.digikey.com/en/products/detail/stmicroelectronics/NUCLEO-WL55JC1/13893870) boards are required, one of which will act as the master and the other will act as the slave. Initially, both boards are in the master state sending "PING" messages at random intervals and waiting for responses. Eventually, the two boards synchronize and only one device sends "PING" and the other sends "PONG" as a response.
+# TFG.  Digital signals remote sensor.
+
+This code is part of a Bachelor's Final Project and it is based on root's project. 
 
 To build the application, follow the steps outlined in the tutorial: [Using the Low-Level Sub-GHz Radio Driver for the STM32WL Series](https://forum.digikey.com/t/using-the-low-level-sub-ghz-radio-driver-for-the-stm32wl-series/18253). Then, simply replace the `main.c` in the project with the `main.c` file in this repository.
+
+There are two main.c files; one of them is for the client side and the other is for the server side.
+The clien side mainC.c, only operates as master states and above all sending data.
+The server side mainS.c, exclusively works as slave states and mainly receiving data.
