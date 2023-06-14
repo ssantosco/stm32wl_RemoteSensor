@@ -71,24 +71,24 @@ typedef struct
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-#define RF_FREQUENCY                                868000000 /* Hz */
-#define TX_OUTPUT_POWER                             14        /* dBm */
-#define LORA_BANDWIDTH                              0         /* Hz */
-#define LORA_SPREADING_FACTOR                       7
-#define LORA_CODINGRATE                             1
-#define LORA_PREAMBLE_LENGTH                        8         /* Same for Tx and Rx */
-#define LORA_SYMBOL_TIMEOUT                         5         /* Symbols */
+#define RF_FREQUENCY                   		868000000 /* Hz */
+#define TX_OUTPUT_POWER                 	14        /* dBm */
+#define LORA_BANDWIDTH                  	0         /* Hz */
+#define LORA_SPREADING_FACTOR              	7
+#define LORA_CODINGRATE                         1
+#define LORA_PREAMBLE_LENGTH                    8         /* Same for Tx and Rx */
+#define LORA_SYMBOL_TIMEOUT                     5         /* Symbols */
 
-#define ADC_DMA_BUFFER_SIZE 						1000	 	// Number of ADC values over DMA
-#define TX_BUFFER_SIZE 								40			// Buffer for TX data pay load
-#define CHANNEL_NUMBER  							2			// ADC channel total number
-#define THRESHOLD_AMP 								2048		// Maximum Threshold in mA
-#define THRESHOLD_VOL 								2048	 	// Maximum Threshold in V
-#define THRESHOLD_TIME								10000		// Time to trigger alarm off or on
-#define ADC_EVAL_TIMER								25	 		// Delay time for evaluate the thresholds for alarm siren in ms
-#define TX_SEND_TIMER								10000		// Data RF send every xx in ms
-#define ADC_SAMPLE_2_TX_TIMER						1000		// Timer to put a sample into txpayload.txBuffer in ms.
-#define UART_LOG_LEVEL								2		 	// Set level of log messages over UART
+#define ADC_DMA_BUFFER_SIZE 			1000	// Number of ADC values over DMA
+#define TX_BUFFER_SIZE 				40	// Buffer for TX data pay load
+#define CHANNEL_NUMBER  			2	// ADC channel total number
+#define THRESHOLD_AMP 				2048	// Maximum Threshold in mA
+#define THRESHOLD_VOL 				2048	// Maximum Threshold in V
+#define THRESHOLD_TIME				10000	// Time to trigger alarm off or on
+#define ADC_EVAL_TIMER				25	// Delay time for evaluate the thresholds for alarm siren in ms
+#define TX_SEND_TIMER				10000	// Data RF send every xx in ms
+#define ADC_SAMPLE_2_TX_TIMER			1000	// Timer to put a sample into txpayload.txBuffer in ms.
+#define UART_LOG_LEVEL				2	// Set level of log messages over UART
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
