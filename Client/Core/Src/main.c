@@ -97,9 +97,9 @@ typedef struct
 /* Structure for TX pay load management */
 typedef struct
 {
-	uint8_t ready2TX;						// Flag to inform about the status of the data loaded (1 -> it's ready to TX, 0 -> it's loading data)
-	uint8_t chCnt;							// Total amount of chars into txBuffer
-	char txBuffer[TX_BUFFER_SIZE]; 			// Size of data for 20 samples of 16 bit (12 bit ADC)
+	uint8_t ready2TX;			// Flag to inform about the status of the data loaded (1 -> it's ready to TX, 0 -> it's loading data)
+	uint8_t chCnt;				// Total amount of chars into txBuffer
+	char txBuffer[TX_BUFFER_SIZE]; 		// Size of data for 20 samples of 16 bit (12 bit ADC)
 } payload_t;
 
 /* LoRA variables */
@@ -111,22 +111,22 @@ const RadioLoRaBandwidths_t Bandwidths[] = { LORA_BW_125, LORA_BW_250, LORA_BW_5
 static int8_t ackNokCnt=0;
 static int8_t rxToutCnt=0;
 
-int alarmState = 0;							// Variable to trigger ALARM state, default state 0
-int alarmCntOn = 0;							// Counter to set the alarm to on
-int alarmCntOff = 0;						// Counter to set the alarm to off
-int tim16cbDiv = 0;							// Variable 1 to divide the Interrupt count for output siren and light
-int sampleCnt = 0;							// Counter for txpayload.txBuffer filling
+int alarmState = 0;		// Variable to trigger ALARM state, default state 0
+int alarmCntOn = 0;		// Counter to set the alarm to on
+int alarmCntOff = 0;		// Counter to set the alarm to off
+int tim16cbDiv = 0;		// Variable 1 to divide the Interrupt count for output siren and light
+int sampleCnt = 0;		// Counter for txpayload.txBuffer filling
 
-payload_t txPayload;						// TX Pay load structure
+payload_t txPayload;				// TX Pay load structure
 uint16_t ADCbuffer[ADC_DMA_BUFFER_SIZE];	// Buffer for ADC-DMA reads
-uint16_t currentAVG=0;						// AVG values to load into the txpayload.txBuffer
+uint16_t currentAVG=0;				// AVG values to load into the txpayload.txBuffer
 uint16_t voltageAVG=0;
 
-uint32_t toaT0 = 0;							// Variables to estimate ToA
+uint32_t toaT0 = 0;				// Variables to estimate ToA
 uint32_t toaT1 = 0;
-uint32_t hacccT0 = 0;						// Variables for metering the time to calculate AVG values into the ADC conversion callback
+uint32_t hacccT0 = 0;				// Variables for metering the time to calculate AVG values into the ADC conversion callback
 uint32_t hacccT1 = 0;
-uint32_t htpecT0 = 0;						// Variables for metering the time to to put a sample into txpayload.txBuffer, used in time elapsed interrupt
+uint32_t htpecT0 = 0;				// Variables for metering the time to to put a sample into txpayload.txBuffer, used in time elapsed interrupt
 uint32_t htpecT1 = 0;
 // Handlers
 TIM_HandleTypeDef htim1;
