@@ -10,3 +10,5 @@ There are two main.c files; one of them is for the client side and the other is 
 The clien side `Client/Core/Src/main.c`, only operates as master states and above all sending data, except that it receives ACK.
 
 The server side `Server/Core/Src/main.c`, exclusively works as slave states and mainly receiving data, except that it sends ACK.
+
+The desing of the PCB in `PCB/main.c`
